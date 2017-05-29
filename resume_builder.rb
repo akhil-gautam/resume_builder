@@ -27,32 +27,40 @@ class Resume_builder
 		puts "Enter your work experience in years:"
 		@work_experience = gets.chomp
 	end
-	def work_Description
+	def work_descrip
 		puts "Enter your work description in not more than 10 words:"
 		@work_description = gets.chomp
 	end
 	def email
 		puts "Enter your Email ID(e.g abc@xyz.com):"
-		@email = gets.chomp
+		@email_id = gets.chomp
 	end
-person = Resume_builder.new()
+	person = Resume_builder.new()
 
-begin
-	person.input_first_name
-end while person.valid_fname
+	begin
+		person.input_first_name
+	end while person.valid_fname
 
-begin
-	person.input_last_name
-end while person.valid_lname
+	begin
+		person.input_last_name
+	end while person.valid_lname
 
-begin
-person.date_of_birth
-end while person.valid_date
+	begin
+		person.date_of_birth
+	end while person.valid_date
 
-person.work_exp
+	begin
+		person.work_exp
+	end while person.valid_experience
 
-person.work_Description
+	begin
+		person.work_descrip
+	end while person.valid_description
 
-person.save_as_file
-puts "You resume is ready for download!"
+	begin
+		person.email
+	end while person.valid_email
+
+	person.save_as_file
+	puts "You resume is ready for download!"
 end
